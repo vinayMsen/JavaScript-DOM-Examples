@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulating HTML</title>
+</head>
+<style>
+    body{
+            background: black;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+        }
+        .highlight {
+            background-color: rgb(0, 110, 255);
+            color:black;
+        }
+        .all{
+            background-color: rgb(0, 110, 255);
+            color:black;
+        }
+
+</style><style>
+    body{
+            background: black;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+        }
+        .highlight {
+            background-color: rgb(0, 110, 255);
+            color:black;
+        }
+        .all{
+            background-color: rgb(0, 110, 255);
+            color:black;
+        }
+
+</style>
+<body>
+    <ul type="A" id="menu">
+        <li>Home </li>
+        <li>About </li>
+        <li>Blog</li>
+        <li>Projects</li>
+        </ul>
+    <script>
+        /* createElement()
+        let div= document.createElement("div");
+        div.innerHTML= "<p>Hello I am created By js create element</p>";
+        // to reflect it on the web page.
+        document.body.appendChild(div);
+        console.log(div);
+        */
+       /*
+       <ul type="A" id="menu">
+        <li>Home </li>
+        <li>About </li>
+        <li>Blog</li>
+        <li>Projects</li>
+        </ul>
+       appendChild()*/
+      let menu= document.getElementById("menu");
+      let list = document.createElement("li");
+      list.innerHTML= "Contacts";
+      menu.appendChild(list);
+      
+      // textContent()
+      console.log(menu.textContent);
+      console.log(menu.innerText);
+      menu.textContent="menu.textContent= me, removes the list";
+    </script>
+</body>
+</html>

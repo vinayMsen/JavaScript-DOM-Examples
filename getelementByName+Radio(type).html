@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Dom</title>
+</head>
+<style>
+    body{
+        background: rgb(0, 0, 0);
+        text-align: center;
+        color: #fff;
+        font-size: 20px;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: 3000;
+    }
+</style>
+<body>
+    
+    <div class="dom">
+        <p id="para">This is from HTML</p>
+        <input type="radio" name="language" value="Javascript" onclick="updateLanguage()">
+        <input type="radio" name="language" value="C" onclick="updateLanguage()">
+        <input type="radio" name="language" value="C++" onclick="updateLanguage()">
+        <p id="lang">You have selected : </p>
+    </div>
+    
+
+    <script>
+          function updateLanguage() {
+            let lang = document.getElementsByName("language");
+            let selectedLanguage = "";
+          for (let i = 0; i < lang.length; i++) {
+                if (lang[i].checked) {
+                    selectedLanguage = lang[i].value;
+                    break;
+                }
+            }
+
+            document.getElementById("lang").innerHTML = "You have selected: " + selectedLanguage;
+        }
+        </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+            background: black;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+        }
+        .highlight {
+            background-color: rgb(0, 110, 255);
+            color:black;
+        }
+        .all{
+            background-color: rgb(0, 110, 255);
+            color:black;
+        }
+
+</style>
+<body>
+    <div>
+        <h2>querySelector() method</h2>
+        <p class="highlight">First highlighted paragraph</p>
+        <p class="highlight">Second highlighted paragraph</p>
+    </div>
+
+    <div>
+        <h2>querySelectorAll() method</h2>
+        <p class="all"> We all are the same color</p>
+        <p class="all"> We all are the same color</p>
+    </div>
+
+<script>
+    // Selects the first element with class 'highlight' querySelector
+    let firstHighlight = document.querySelector('.highlight');
+    firstHighlight.style.color="white";
+    console.log(firstHighlight);  // Outputs the first <p> element
+
+    // selects the all elements with class 'all'
+    let allhigh = document.querySelectorAll('.all');
+
+        // Loop through the NodeList to apply styles
+        allhigh.forEach(function(element) {
+            element.style.color = "white";
+            //element.style.backgroundColor = "navy"; // Just for better visibility
+        });
+
+        // Log the NodeList properly
+        console.log(allhigh); // This logs the NodeList
+        console.log("The elements with the class 'all' were updated.");
+</script>
+</body>
+</html>

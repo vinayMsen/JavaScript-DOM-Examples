@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insertAdjacentHTML</title>
+</head>
+<style>
+    body{
+        background: black;
+        box-sizing: border-box;
+        text-align: center;
+        color: white;
+        font-size: 20px;
+        margin-top: 50px;
+    }
+    div{
+        display: block;
+        height: 150px;
+        width: 200px;
+        background: navy;
+        margin: auto;
+        border: 3px solid green;
+        padding: 10px;
+        transition: height 0.3s ease; /* smooth height transition */
+    }
+    button{
+        display: block;
+        margin: auto;
+        border-radius: 5%;
+        padding: 5px;
+        width: 90px;
+        cursor: pointer;
+    }
+</style>
+<body>
+    <div id="container">
+        <button id="beforebegin" onclick="beforebegin()">beforebegin</button>
+        <button id="afterbegin" onclick="afterbegin()">afterbegin</button>
+        <button id="beforeend" onclick="beforeend()">beforeend</button>
+        <button id="afterend" onclick="afterend()">afterend</button>
+    </div>
+
+    <script>
+        const container = document.getElementById('container');
+        
+        function adjustHeight() {
+            // Increase the height by 50px
+            const currentHeight = parseInt(window.getComputedStyle(container).height);
+            container.style.height = (currentHeight + 50) + 'px';
+        }
+
+        function beforebegin() {
+            container.insertAdjacentHTML("beforebegin", "<h2>Before the container</h2>");
+            //adjustHeight();
+        }
+        
+        function afterbegin() {
+            container.insertAdjacentHTML("afterbegin", "<p>Inserted at the beginning</p>");
+            adjustHeight();
+        }
+        
+        function beforeend() {
+            container.insertAdjacentHTML("beforeend", "<p>Inserted at the end</p>");
+            adjustHeight();
+        }
+        
+        function afterend() {
+            container.insertAdjacentHTML("afterend", "<h2>After the container</h2>");
+           // adjustHeight();
+        }
+    </script>
+</body>
+</html>

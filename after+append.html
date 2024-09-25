@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>append()+after()Example</title>
+</head>
+<style>
+    body{
+    background: black;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+</style>
+
+<body>
+     <!--this is for after()  example-->
+    <div id="content">Content of the div.</div>
+    <button onclick="insertAfter()">Insert After</button>
+
+    <!--this is for append() example-->
+    <div id="cont">Existing content in the div.</div>
+    <button onclick="addContent()">Append Content</button>
+
+    <!--this is for prepend() example-->
+    <div id="content3">This is the original content.</div>
+    <button onclick="prependContent()">Prepend Content</button>
+
+    <script>
+        // after()
+         function insertAfter() {
+            let div = document.getElementById('content');
+            let newParagraph = document.createElement('p');
+            newParagraph.textContent = "This is a new after() inserted after the div.\n";
+            
+            // Insert the new paragraph after the div
+            div.after(newParagraph);
+           // div.after(newParagraph,"This is addtional text");
+        }
+        // append()
+        function addContent() {
+            let div = document.getElementById('cont');
+            let newParagraph = document.createElement('p');
+            newParagraph.textContent = "This is a new append() appended after the div.\n";
+            
+            // Append new paragraph to the div
+            div.append(newParagraph);
+            //div.append(newParagraph, " Additional text.")
+        }
+        //prepend()
+        function prependContent() {
+            let div = document.getElementById('content3');
+            let newHeading = document.createElement('h2');
+            newHeading.textContent = "Prepended Heading";
+            
+            // Prepend new heading and text to the div
+            div.prepend(newHeading, " Prepended text.");
+        }
+
+       
+    </script>
+</body>
+</html>
