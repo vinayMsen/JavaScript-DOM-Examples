@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clone Node</title>
+</head>
+<style>
+    body{
+    background: black;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+button{
+    color: black;
+    font-size: 30px;
+    margin: auto;
+    padding: auto;
+    width: relative;
+    height: relative;
+}
+button:hover{
+    cursor: pointer;
+}
+</style>
+<body>
+      <button id="originalButton">Original Button</button>
+
+      <script>
+        var originalButton = document.getElementById('originalButton');
+
+// Clone the button
+var clickSound = new Audio('click-sound.mp3');
+var clonedButton = originalButton.cloneNode(true);
+ clonedButton.textContent="Cloned Button";
+// Add a new event listener to the cloned button
+clonedButton.addEventListener('click', function() {
+    clickSound.play();
+    alert('Cloned button clicked!');
+    
+});
+
+// Append the cloned button to the body
+document.body.appendChild(clonedButton);
+
+
+      </script>
+</body>
+</html>

@@ -16,7 +16,8 @@
 
 <body>
      <!--this is for after()  example-->
-    <div id="content">Content of the div.</div>
+     <div class="parent">
+        <div id="content">Content of the div.</div>
     <button onclick="insertAfter()">Insert After</button>
 
     <!--this is for append() example-->
@@ -26,6 +27,11 @@
     <!--this is for prepend() example-->
     <div id="content3">This is the original content.</div>
     <button onclick="prependContent()">Prepend Content</button>
+   
+     
+     </div>
+    <!--This is for removing the first child-->
+    <button  onclick="removechild()">RemoveFirstChild</button>
 
     <script>
         // after()
@@ -58,6 +64,21 @@
             div.prepend(newHeading, " Prepended text.");
         }
 
+
+        // removing first child
+        function removechild() {
+    // method for selecting an element by class is document.getElementsByClassName(), and it returns a collection
+    // (a list of elements). You need to access the first element in the list using [0] or another appropriate index.
+    var parent = document.getElementsByClassName('parent')[0]; // Select the first element with the 'parent' class
+    
+    // Remove the first child of the parent element
+    if (parent.firstElementChild) { // Check if there's a child to remove
+        parent.removeChild(parent.firstElementChild);
+    } else {
+        alert("No Child found to delete!")
+        console.log('No child element found.');
+    }
+}
        
     </script>
 </body>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Before</title>
+</head>
+<style>
+    body{
+            background: black;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+        }
+        .highlight {
+            background-color: rgb(0, 110, 255);
+            color:black;
+        }
+        .all{
+            background-color: rgb(0, 110, 255);
+            color:black;
+        }
+
+</style><style>
+    body{
+            background: black;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+        }
+
+
+</style>
+<body>
+    <ul type="A" id="menu">
+        <li>Home </li>
+        <li>About </li>
+       <!--Blog is here adding through JavaScript-->
+        <li>Projects</li>
+        </ul>
+        <button id="addblog" onclick="addblog()">Add Blog</button>
+    <script>
+        var clicked=false;
+      function addblog()
+      {
+        if(!clicked)
+           {
+        var manu= document.getElementById("menu");
+        let newlist= document.createElement('li');
+        newlist.innerText="Blog";
+        menu.insertBefore(newlist,menu.lastElementChild);
+        clicked=true;
+        let addblog=document.getElementById("addblog");
+        addblog.remove();
+
+           }
+
+      }
+        
+    </script>
+</body>
+</html>
