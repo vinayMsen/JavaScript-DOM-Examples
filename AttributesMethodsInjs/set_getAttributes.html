@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>set_getAttribute</title>
+</head>
+<style>
+    body {
+        background-color: black;
+        font-size: 20px;
+        margin: 0;
+        padding: 0;
+    }
+    #parent {
+        display: flex;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 50px; 
+        margin-top: 50px;
+        border-radius: 2px;
+        border-color: white;
+        width: 500px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    p {
+        color: white;
+        margin-top: 20px;
+    }
+</style>
+<body>
+     <div id="parent">
+        <button onclick="changevalue()">I am Button</button>
+     </div>
+
+     <script>
+        let btn = document.querySelector("#parent button"); 
+        var  parent =document.getElementById('parent');
+
+        function changevalue() {
+            btn.setAttribute("id", "btn"); 
+            btn.setAttribute("type", "button"); 
+            btn.setAttribute("autofocus", "autofocus"); 
+            let idd = document.getElementById("btn");
+            displayAttributes(idd);
+        }
+
+        function displayAttributes(element) {
+            let attributes = element.attributes;
+            let para = document.createElement('p');
+            let attributesText = 'The attributes of the button tags<br>';
+
+            // Iterate over the attributes and build a string of name-value pairs
+            for (let i = 0; i < attributes.length; i++) {
+                let attr = attributes[i];
+                attributesText += `${attr.name}: ${attr.value}<br>`;
+                console.log(`${attr.name}: ${attr.value}`); // Print to console
+            }
+
+            // Display the attributes inside the paragraph
+            para.innerHTML = attributesText;
+            parent.replaceChild(para,btn); // Append paragraph to the body
+        }
+     </script>
+</body>
+</html>
