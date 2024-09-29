@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Manipulation</title>
+</head>
+<style>
+    body {
+        background-color: black;
+        font-size: 25px;
+        color: white;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Full viewport height to vertically center content */
+        text-align: center;
+    }
+    .parent1 {
+        margin: auto;
+        text-align: center;
+    }
+    button{
+        color: rgb(0, 0, 0);
+        font-weight: 300;
+        background-color: white;
+        cursor: pointer;
+        font-size: 25px;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        align-items: center;
+        border: 3px solid rgb(2, 128, 224);
+        border-radius: 10px;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 3px;
+    }
+    #ch3{
+        margin: 10px;
+    }
+</style>
+<body>
+    <div class="parent1">
+        <p id="child1">I am the first Child</p>
+        <h2>Click Below Button to change the style using style property of first Child</h2>
+        <button id="ch1">Click Me please</button>
+
+        <p id="child2">I am the second Child</p>
+        <h2>Click Below Button to change the style using CSSTEXT of second Child</h2>
+        <button id="ch2">Click Me Naah</button>
+        <br>
+        <button id="ch3">Click me for computed Style</button>
+    </div>
+    
+
+    <script>
+        // Change style using style property for the first child
+        document.getElementById("ch1").addEventListener("click", function() {
+            const child1 = document.getElementById("child1");
+            child1.style.color = "yellow";
+            child1.style.fontSize = "30px";
+            child1.style.backgroundColor = "blue";
+        });
+
+        // Change style using cssText for the second child
+        document.getElementById("ch2").addEventListener("click", function() {
+
+            const child2 = document.getElementById("child2");
+            child2.style.cssText = "color: black; font-size: 30px; background-color: yellow;";
+        });
+
+       var clicked=false;
+
+        document.getElementById("ch3").addEventListener("click",
+         function() {
+            
+            if(!clicked)
+         {
+            const parent = document.querySelector(".parent1");
+            const x = document.createElement('p'); // Create new paragraph element
+            const computedStyles = window.getComputedStyle(document.getElementById("ch1"));
+
+            // Get several properties
+            const fontSize = computedStyles.fontSize;
+            const margin = computedStyles.margin;
+            const padding = computedStyles.padding;
+            const backgroundColor = computedStyles.backgroundColor;
+
+            // Add the computed style info as text
+            x.textContent = `Font Size: ${fontSize}, Margin: ${margin}, Padding: ${padding}, Background Color: ${backgroundColor}`;
+
+            // Append the new paragraph with computed styles info after the parent div
+            parent.appendChild(x);
+            clicked=true;
+         }
+        });
+
+
+    </script>
+</body>
+</html>
