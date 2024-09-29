@@ -8,7 +8,7 @@
 <style>
     body {
         background-color: black;
-        font-size: 25px;
+        font-size: 20px;
         color: white;
         margin: 0;
         padding: 0;
@@ -43,13 +43,13 @@
 <body>
     <div class="parent1">
         <p id="child1">I am the first Child</p>
-        <h2>Click Below Button to change the style using style property of first Child</h2>
+        <h3>Click Below Button to change the style using style property of first Child</h3>
         <button id="ch1">Click Me please</button>
 
         <p id="child2">I am the second Child</p>
-        <h2>Click Below Button to change the style using CSSTEXT of second Child</h2>
+        <h3>Click Below Button to change the style using CSSTEXT of second Child</h3>
         <button id="ch2">Click Me Naah</button>
-        <br>
+        <h3>Now see ComputedStyle of First Child</h3>
         <button id="ch3">Click me for computed Style</button>
     </div>
     
@@ -79,7 +79,7 @@
          {
             const parent = document.querySelector(".parent1");
             const x = document.createElement('p'); // Create new paragraph element
-            const computedStyles = window.getComputedStyle(document.getElementById("ch1"));
+            const computedStyles = window.getComputedStyle(document.getElementById("child1"));
 
             // Get several properties
             const fontSize = computedStyles.fontSize;
