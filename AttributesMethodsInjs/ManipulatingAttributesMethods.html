@@ -32,12 +32,26 @@
     }
     p {
         color: white;
-        margin-top: 20px;
+        margin-top: auto;
+    }
+    button{
+        color: rgb(0, 0, 0);
+        font-weight: 300;
+        background-color: white;
+        cursor: pointer;
+        font-size: 25px;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        align-items: center;
+        border: 3px solid red;
+        border-radius: 10px;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 3px;
     }
 </style>
 <body>
-     <div id="parent">
-        <button onclick="changevalue()">I am Button</button>
+     <div id="parent" class="papaji">
+        <button onclick="changevalue()">see attributes</button>
      </div>
 
      <script>
@@ -67,7 +81,20 @@
             // Display the attributes inside the paragraph
             para.innerHTML = attributesText;
             parent.replaceChild(para,btn); // Append paragraph to the body
+            
         }
+
+        // hasAttribute() method to check whether the element consist of specified element or not returns true or false;
+        console.log("Parent element has class: "+parent.hasAttribute("class"));
+        console.log("Parent element has id: "+parent.hasAttribute("id"));
+
+        // removeAttribute() to remove any attribute from an element
+        parent.removeAttribute("class");
+        console.log("Parent element has class: "+parent.hasAttribute("class")+ " , because it is removed by removeAttribute()");
+
+
+        
+
      </script>
 </body>
 </html>
