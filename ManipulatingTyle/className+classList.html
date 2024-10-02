@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Name,list</title>
+</head>
+<style>
+    body{
+            background: black;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+        }
+</style>
+<body>
+    <h2 id="miles" class="first second">I am &lt;h2&gt; tag, have two classes</h2>
+
+    <script>
+
+        let element= document.getElementById("miles");
+        // we can also add class by using classList.add();
+        element.classList.add("vinay");
+        let attributes = element.attributes;
+        console.log(element.classList);
+        
+            let para = document.createElement('p');
+            let attributesText = 'The attributes of the h2 tag before classNaeme property<br>';
+
+            // Iterate over the attributes and build a string of name-value pairs
+            for (let i = 0; i < attributes.length; i++) {
+                let attr = attributes[i];
+                attributesText += `${attr.name}: ${attr.value}<br>`;
+                console.log(`${attr.name}: ${attr.value}`); // Print to console
+            }
+            // removing using classList
+            element.classList.remove("vinay");
+            // Display the attributes inside the paragraph
+            para.innerHTML = attributesText;
+            document.body.appendChild(para);
+           
+            element.className= "newclass"; // assigning new class.
+            attributes=element.attributes;
+             attributesText = 'The attributes of the &lt h2&gt; tag after className property<br>';
+
+            // Iterate over the attributes and build a string of name-value pairs
+            for (let i = 0; i < attributes.length; i++) {
+                let attr = attributes[i];
+                attributesText += `${attr.name}: ${attr.value}<br>`;
+                console.log(`${attr.name}: ${attr.value}`); // Print to console
+            }
+            let newpara= document.createElement('p');
+            newpara.innerHTML= attributesText;
+            document.body.appendChild(newpara);
+
+    </script>
+</body>
+</html>
