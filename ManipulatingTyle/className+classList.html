@@ -40,6 +40,16 @@
             document.body.appendChild(para);
            
             element.className= "newclass"; // assigning new class.
+             // or we can replace class with classList
+            // element.classList.replace("newclass","classList");
+
+            // checking the availability of class using classList
+            console.log("the class contain the 'newclass' :"+element.classList.contains("newclass"));
+
+            // classList.toggle to remove if the class is present else add
+             element.classList.toggle("newclass"); // newclass is there so it will be removed.
+            element.classList.toggle("toggleclass"); // since toggleclass is not in the tag so it will be added.
+            console.log(element);
             attributes=element.attributes;
              attributesText = 'The attributes of the &lt h2&gt; tag after className property<br>';
 

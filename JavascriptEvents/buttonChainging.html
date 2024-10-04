@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example JS event</title>
+</head>
+<style>
+    body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+p {
+    display: block;
+    font: 200;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    text-align: center; /* Center the text within the p tag */
+    margin-top: 20px; /* Space between button and p tag */
+}
+
+button {
+    border-radius: 15px;
+    border: none;
+    font-size: 20px;
+    font-weight: 200;
+    height: 50px;
+    width: 140px;
+    color: blue;
+    cursor: pointer;
+}
+</style>
+<body>
+    <p>Checking the type of event and target object using<br> 
+        &lt button&gt; tag by continuously changing its color after event occurs</p>
+    <button >click me</button>
+    <script>
+        const btn = document.querySelector("button");
+
+function random(number) {
+  return Math.floor(Math.random() * (number + 1));
+}
+
+btn.addEventListener("click", () => {
+  const rndCol = `rgb(${random(255)} ${random(255)} ${random(255)})`;
+  document.body.style.backgroundColor = rndCol;
+  const button = document.getElementById('check')
+});
+
+// checking the type of event: 
+var clicked=true;
+btn.addEventListener('click', (e) => {
+  if(clicked)
+  {
+    console.log('Event type: ' + e.type);
+  console.log('Target element: ' + e.target);
+  clicked=false;
+  }
+});
+
+    </script>
+</body>
+</html>
