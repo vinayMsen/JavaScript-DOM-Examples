@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details</title>
+</head>
+<style>
+    body{
+        background-color: black;
+        font-size: 20px;
+        color : white;
+        margin: 1px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    div{
+        margin: auto;
+        text-align: center;
+    }
+</style>
+<body>
+    <div>
+        <p id="vinay">Click the button below to see the details on the console.</p>
+        <button id="myButton">Click me</button>
+    </div>
+    <script>
+        /* the onclick handler for the button does not automatically pass
+         the event object e to the function displaymsg()
+        need to modify the onclick to explicitly pass the event to the function.
+         We can achieve this by using the addEventListener method or updating the inline onclick function
+         */
+        let eventoccur=false;
+         document.getElementById("myButton").addEventListener("click", displaymsg);
+        function displaymsg(e)
+        {
+            if(!eventoccur){
+            console.log("Event type = " + e.type);
+            console.log("Passed object = ", e);
+            console.log("Target element = " + e.target);
+            // this keyword refers to the target element same as e.target
+            // also used to find the property of the element.
+            console.log("This keyword ="+ this);
+            console.log("Cheking id using this.id= " +this.id);
+
+            eventoccur= true;
+            }
+        }
+    </script>
+    
+</body>
+</html>
