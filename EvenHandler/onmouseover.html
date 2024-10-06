@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Mouseover</title>
+</head>
+<style>
+    body{
+        background-color: black;
+        font-size: 20px;
+        color: white;
+        margin: 1px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    div{
+        margin: auto;
+        text-align: center;
+    }
+    #input{
+        font-size: 20px;
+        height: 25px;
+        width: inherit;
+    }
+    input {
+            border: 3px solid rgb(3, 222, 230); /* Initial border */
+            color: white;
+        }
+        /* Keep border blue when the input is focused */
+        input:focus {
+            border-color: blue !important;
+            outline: none; /* Remove default focus outline */
+        }
+</style>
+<body>
+    <div>
+        <br>
+        <p><b>onmouseover</b> and <b>onmouseout</b> 'event on input fieldset</p>
+        <input type="text" placeholder="refreshed" id="input">
+    </div>
+    <script>
+        let input = document.getElementById('input');
+        
+        // On mouseover, curve the corners and apply styles
+        input.onmouseover = function() {
+            input.style.borderColor = "blue"; 
+            input.style.color = "blue";  
+            input.placeholder = "mouseover";  
+            input.style.borderRadius = "10px";  // Make corners slightly curved
+        }
+    
+        // Ensure border color remains blue on focus (while typing)
+        input.onfocus = function() {
+            input.style.borderColor = "blue";  // Keep border blue on focus
+        }
+    
+        // On mouseout, revert styles if the input is not focused
+        input.onmouseout = function() {
+            if (document.activeElement !== input) {
+                input.style.borderColor = "";  // Revert border color if not focused
+                input.style.color = "";  // Revert text color
+                input.placeholder = "mouseout"; 
+                input.style.borderRadius = "";  
+            }
+        }
+    
+       
+    </script>
+    
+    
+</body>
+</html>
