@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add+remove Event</title>
+</head>
+<style>
+    body{
+        background-color: black;
+        font-size: 20px;
+        color : white;
+        margin: 1px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    div{
+        margin: 50px;
+        padding: auto;
+    }
+</style>
+<body>
+    <div id="parent">
+        <button id="btn">Click Me</button>
+    </div>
+
+    <script>
+        let btn= document.getElementById('btn');
+        let count=0;
+        let para= document.createElement('p');
+        //addEventListener(event, function, useCapture(it is optional boolean value))
+        function addingevent(){
+            count++;
+           if(count<4)
+           {
+            
+            if(count==1)
+        {
+            para.innerHTML= "i am clicked";
+            document.getElementById('parent').append(para);
+            console.log("Button is clicked");
+        }
+        else if(count==2)
+        {
+            para.innerHTML= "i am already clicked";
+            document.getElementById('parent').append(para);
+            console.log("Button is clicked before");
+        }
+        else if(count==3){
+            para.innerHTML= "Are a NewBe in WebDevelopment";
+            document.getElementById('parent').append(para);
+            console.log("Jerk");
+        }
+           }
+        }
+        btn.addEventListener('click',addingevent);
+
+
+        // remove event listener needs external function which was added in addEventListener before.
+        // uncomment below statement to see the effect 
+       // btn.removeEventListener('click',addingevent);
+    </script>
+</body>
+</html>

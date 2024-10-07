@@ -8,7 +8,7 @@
 <style>
     body{
         background-color: black;
-        font-size: 20px;
+        font-size: 30px;
         color: white;
         margin: 1px;
         align-items: center;
@@ -45,6 +45,7 @@
         
         // On mouseover, curve the corners and apply styles
         input.onmouseover = function() {
+            console.log(event.type);
             input.style.borderColor = "blue"; 
             input.style.color = "blue";  
             input.placeholder = "mouseover";  
@@ -54,6 +55,7 @@
         // Ensure border color remains blue on focus (while typing)
         input.onfocus = function() {
             input.style.borderColor = "blue";  // Keep border blue on focus
+            console.log(event.type);
         }
     
         // On mouseout, revert styles if the input is not focused
@@ -63,8 +65,11 @@
                 input.style.color = "";  // Revert text color
                 input.placeholder = "mouseout"; 
                 input.style.borderRadius = "";  
+                console.log(event.type);
             }
         }
+        // to remove event handler
+        //input.onmouseout=null;
     
        
     </script>

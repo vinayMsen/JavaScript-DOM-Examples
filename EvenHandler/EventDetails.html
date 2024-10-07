@@ -24,6 +24,7 @@
     <div>
         <p id="vinay">Click the button below to see the details on the console.</p>
         <button id="mybtn" type="submit">Click me</button>
+        <br>
     </div>
     <script>
         /* the onclick handler for the button does not automatically pass
@@ -37,7 +38,7 @@
         {
             if(!eventoccur){
             console.log("Event type = " + e.type);
-            console.log("Passed object = ", e);
+            console.log("Passed object = " +e);
             console.log("Target element = " + e.target);
             // this keyword refers to the target element same as e.target
             // also used to find the property of the element.
