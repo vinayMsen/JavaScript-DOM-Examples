@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Color</title>
+</head>
+<style>
+  body{
+        font-size: 25px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+     }
+    #p1{
+        background-color: rgb(255,0,0,0.3);
+    }
+    #p2{
+        background-color: rgba(0, 255, 0, 0.46);
+    }
+    #p3{
+        color: white;
+        background-color: rgba(0, 0, 255, 0.811);
+    }
+
+    #g{
+        background-color: hsl(120,100%,50%);
+    }
+    #green{
+        background-color: hsl(120,100%,75%);
+    }
+    #dark{
+        background-color: hsl(120,100%,25%);
+        color: white;
+    }
+  
+</style>
+<body>
+    <div>
+        <h2>CSS Color types</h2>
+      <p style="color:#ff0000">Hex Color : #ff0000 for red</p>
+      <p  style="color:rgb(0,255,0)">  RGB aboslute : rgb(0,255,0) for green</p>
+      <p style="color:blue">Keywords: like writing : blue for blue</p> 
+    </div>
+    <div>
+        <h2>Opacity Property in css</h2>
+        <p id="p1">Backgroundcolor: rgba(255,0,0,0.2); (alpha-opacity of color))</p>
+        <p id="p2">Backgroundcolor: rgba(0,0,255, 0.46 (alpha-opacity of color))</p>
+        <p id="p3">Backgroundcolor: rgba(0,255,0, 0.811(alpha-opacity of color))</p>
+    </div>
+    <div>
+        <h2> (hsl)Huge Saturation and lightness in color</h2>
+        <p id="g">green : hsl(120,100%,50%);</p>
+        <p id="green">Normal green : hsl(120,100%,75%);</p>
+        <p id="dark"> Dark green : hsl(120,100%,25%);</p>
+    </div>
+</body>
+</html>
