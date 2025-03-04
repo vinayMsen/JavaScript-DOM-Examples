@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Date</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        background-color: black;
+        color: white;
+        font-weight: 400;
+        height: 100vh; /* Full viewport height */
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        flex-direction: column; /* Stack elements */
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        font-weight: 560;
+        margin-bottom: 20px;
+    }
+    #output {
+        border: 2px solid white;
+        width: 50%;
+        height: 100px;
+        font-size: 18px;
+        color: yellow;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        overflow: auto;
+    }
+</style>
+<body>
+    <h2>Current Date and Time fetching from Browser</h2>
+    
+    <button id="enable">Click to Enable Keyboard Event</button>
+    
+    <div id="output" tabindex="0">
+        
+    </div>
+
+    <script>
+        const outputDiv = document.getElementById("output");
+        const enableButton = document.getElementById("enable");
+
+        // Ensure the div gets focus when the button is clicked
+        enableButton.addEventListener("click", () => {
+            outputDiv.focus();
+            outputDiv.innerHTML="<p >Press any key after clicking the button</p>"
+        });
+
+        // Listen for keydown inside the div
+        outputDiv.addEventListener("keydown", () => {
+            document.getElementById("output").innerHTML = new Date();
+        });
+    </script>
+
+      <!-- <input type="text" id="output" placeholder="press any key">
+<p id="demo"></p>
+
+<script>
+    document.getElementById("output").addEventListener("keydown", () => {
+        document.getElementById("demo").innerHTML = new Date();
+    });
+</script> -->
+</body>
+</html>
+
+
+    
+  
+
+   

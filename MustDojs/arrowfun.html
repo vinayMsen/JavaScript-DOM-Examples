@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            background-color: black;
+            color: white;
+            font-weight: 400;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: 560;
+            margin-bottom: 20px;
+        }
+        #output {
+            border: 2px solid white;
+            width: 50%;
+            height: 100px;
+            font-size: 18px;
+            color: yellow;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <h2>You may visit Developer Mode for more clarification</h2>
+    <h2>Arrow Function vs Regular Function</h2>
+    <button onclick="visitorExample()">Run Example</button>
+    <div id="output">
+        <p id="demo"></p>
+    </div>
+    
+
+    <script>
+        class Visitor {
+            constructor(name) {
+                this.name = name;
+            }
+
+            printArrow() {
+                setTimeout(() => { // ✅ Arrow function retains 'this'
+                    document.getElementById("demo").innerText += `Arrow Function: Hello , ${this.name}!\n`;
+                }, 500);
+            }
+
+            printFunction() {
+                setTimeout(function() { // ❌ Regular function loses 'this'
+                    document.getElementById("demo").innerText += `Regular Function: Hello , ${this.name}!`;
+                }, 500); 
+            }
+        }
+
+        function visitorExample() {
+            document.getElementById("demo").innerText = ""; // Clear previous output
+            let visitor = new Visitor("Vinay");
+
+            visitor.printArrow();    //  Prints "Hello, Vinay!"
+            visitor.printFunction(); //  Prints "Hello, '' "
+        }
+    </script>
+</body>
+</html>

@@ -60,4 +60,31 @@ let am = '58.5';
 am= parseFloat(am); // parseInt(am)= 58
 console.log('type of am after converting to float',am, typeof am); // type number but print 58.5 since only one data type for numbers in js
 
+// converting string to number
+let st= "hello";
+st= parseInt(st); // this will give NaN
+console.log('type',typeof st, 'value of st',st);
+
+// type conversion
+x= 5+'5';
+x= 1+null;
+x= undefined+1;
+console.log(x,typeof x);
+
+
+// Template Literals
+let name = "Vinay";
+let age= 20;
+x=`My name is ${name} and age is ${age}`;
+console.log(x); // this is template literals
+
+// string properties and methods
+// let s= "Hello Vinay";
+// x= s.length;
+// console.log(x);
+// internally 
+s= new String("Hello Vinay");
+x=s.length;
+console.log(x, s);
+
 
